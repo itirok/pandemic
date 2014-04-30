@@ -1,0 +1,85 @@
+#:kivy 1.8.0
+
+<PandemicWidget>:
+    orientation:'vertical'
+    anchor_x: 'left'
+    anchor_y: 'top'
+    GridLayout:
+        id: topgrid
+        cols: 2
+        GridLayout:
+            cols: 2
+            Label:
+                text: 'Jogadores:'
+                halign: 'right'
+            TextInput:
+                id: num_ply
+                multiline: False
+                text: '05'
+                font_size: 30
+            Label:
+                text: 'Cidades:'
+                halign: 'right'
+            TextInput:
+                id: num_cit
+                multiline: False
+                text: '48'
+                font_size: 30
+            Label:
+                text: 'Epidemics:'
+                halign: 'right'
+            TextInput:
+                id: num_epd
+                multiline: False
+                text: '07'
+                font_size: 30
+            Label:
+                text: 'Eventos:'
+                halign: 'right'
+            TextInput:
+                id: num_evt
+                multiline: False
+                text: '10'
+                font_size: 30
+            Label:
+                halign: 'right'
+                text: 'Mutações:'
+            TextInput:
+                id: num_mut
+                multiline: False
+                font_size: 30
+                text: '00'
+            Label:
+                halign: 'right'
+                text: 'Agrupar cidades e eventos?'
+            CheckBox:
+                id: check_group
+                active: True
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                id: title
+                font_size: 40
+                color: (1, 0, 0, 1.0)
+                text: 'Crie um novo jogo'
+            Label:
+                id: card01
+                font_size: 30
+                text: ' '
+            Label:
+                id: card02
+                font_size: 30
+                text: ' '
+    AnchorLayout:
+        anchor_y: 'bottom'
+        anchor_x: 'left'
+        GridLayout:
+            cols: 2
+            row_default_height: 40
+            row_force_default: True
+            Button:
+                text: 'Crie um jogo'
+                on_press: root.start_count()
+            Button:
+                text: 'Próximas cartas'
+                on_press: root.add_count()
